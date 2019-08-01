@@ -22,17 +22,38 @@ namespace FileUtility
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Reset();
             sw.Start();
-            
-
             FileInfo[] fileinfoArray = GetFileinfos();
 
             for (int i = 0; i < fileinfoArray.Length; i++)
             {
                 FileMove(fileinfoArray[i]);
             }
-
             sw.Stop();
             
+        }
+
+        public static void FileMovePart2Folder()
+        {
+            DirectoryInfo destinfo = new DirectoryInfo(m_DestFolderpath);
+            FileInfo[] destinfos = destinfo.GetFiles();
+
+            DirectoryInfo sourceinfo = new DirectoryInfo(m_SourceFolderpath);
+            FileInfo[] sourceinfos = sourceinfo.GetFiles();
+
+            for (int i = 0; i < sourceinfos.Length; i++)
+            {
+                for (int j = 0; j < destinfos.Length; j++)
+                {
+                    if(destinfos[j].Name.Equals(sourceinfos[i].Name))
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        FileMove(sourceinfos[i]);
+                    }
+                }
+            }
         }
 
         public static void FileUtilityInit(string folderpath, string destpath, string filetype)
