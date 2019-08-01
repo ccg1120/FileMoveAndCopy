@@ -1,0 +1,10 @@
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\bin\Release\FileUtility.exe.config
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\bin\Release\FileUtility.exe
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\bin\Release\FileUtility.pdb
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.csprojAssemblyReference.cache
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.Form1.resources
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.Properties.Resources.resources
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.csproj.GenerateResource.cache
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.csproj.CoreCompileInputs.cache
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.exe
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Release\FileUtility.pdb
