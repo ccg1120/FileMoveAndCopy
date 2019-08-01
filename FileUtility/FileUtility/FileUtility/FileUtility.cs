@@ -88,7 +88,7 @@ namespace FileUtility
         {
             string[] splitname = name.Split('.');
             int lastindex = splitname.Length - 1;
-            return splitname[lastindex];
+            return splitname[lastindex].ToLower();
         }
     }
 }

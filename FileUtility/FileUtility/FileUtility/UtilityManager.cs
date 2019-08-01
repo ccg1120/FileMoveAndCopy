@@ -34,7 +34,9 @@ namespace FileUtility
         public string FileType
         {
             get { return m_FileType; }
-            set { m_FileType = value; }
+            set { m_FileType = value;
+                m_FileType.ToLower();
+            }
         }
    
 
