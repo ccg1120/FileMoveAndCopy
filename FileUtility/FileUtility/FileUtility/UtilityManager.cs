@@ -34,7 +34,9 @@ namespace FileUtility
         public string FileType
         {
             get { return m_FileType; }
-            set { m_FileType = value; }
+            set { m_FileType = value;
+                m_FileType.ToLower();
+            }
         }
    
 
@@ -68,6 +70,8 @@ namespace FileUtility
             return result;
         }
 
+
+
         public void CreateAction(Action finishact)
         {
             if(!CheckState_FileMove())
@@ -76,13 +80,11 @@ namespace FileUtility
             }
             if (FolderUtility.CreateFolder())
             {
-                //TODO : 파일을 바로 옮긴다.
                 FileUtility.FileMovesAlltoFolder();
             }
             else
             {
-                //TODO : 파일을 옮길지 물어본다.
-                
+                FileUtility.FileMovePart2Folder();
             }
             finishact.Invoke();
         }
