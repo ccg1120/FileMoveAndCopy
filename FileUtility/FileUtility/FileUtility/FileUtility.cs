@@ -12,10 +12,9 @@ namespace FileUtility
     
     public class FileUtility
     {
-        private static string m_DestFolderpath;
-        private static string m_SourceFolderpath;
-        private static string m_FileType;
-
+        private static string m_DestFolderpath; //최종 옮겨질 위치
+        private static string m_SourceFolderpath;   // 옮길 파일 위치
+        private static string m_FileType;   //파일 종류
 
         public static void FileMovesAlltoFolder()
         {
@@ -37,22 +36,25 @@ namespace FileUtility
             DirectoryInfo destinfo = new DirectoryInfo(m_DestFolderpath);
             FileInfo[] destinfos = destinfo.GetFiles();
 
-            DirectoryInfo sourceinfo = new DirectoryInfo(m_SourceFolderpath);
-            FileInfo[] sourceinfos = sourceinfo.GetFiles();
+            FileInfo[] sourceinfos = GetFileinfos();
 
+            
             for (int i = 0; i < sourceinfos.Length; i++)
             {
+                bool havefile = false;
                 for (int j = 0; j < destinfos.Length; j++)
                 {
                     if(destinfos[j].Name.Equals(sourceinfos[i].Name))
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        FileMove(sourceinfos[i]);
+                        havefile = true;
+                        break;
                     }
                 }
+                if(!havefile)
+                {
+                    FileMove(sourceinfos[i]);
+                }
+                
             }
         }
 
@@ -111,5 +113,26 @@ namespace FileUtility
             int lastindex = splitname.Length - 1;
             return splitname[lastindex].ToLower();
         }
+        private static string GetFileNameWithoutExt(string name)
+        {
+            string result = string.Empty;
+
+
+
+            return result;
+        }
+    }
+
+    public class FileMovePath
+    {
+        public string m_DestFolderpath; //최종 옮겨질 위치
+        public string m_SourceFolderpath;   // 옮길 파일 위치
+        public string m_FileType;   //파일 종류
+    }
+    public class FileChoicePath
+    {
+        public string m_DestFolderpath; //최종 옮겨질 위치
+        public string m_SourceFolderpath;   // 옮길 파일 위치
+        public string m_FileType;   //파일 종류
     }
 }
