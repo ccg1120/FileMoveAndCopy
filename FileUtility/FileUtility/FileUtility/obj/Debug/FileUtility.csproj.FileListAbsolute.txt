@@ -8,3 +8,4 @@ G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\bin\Debug\Fi
 G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Debug\FileUtility.exe
 G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Debug\FileUtility.pdb
 G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Debug\FileUtility.Form1.resources
+G:\G_Project\MY\FileMoveAndCopy\FileUtility\FileUtility\FileUtility\obj\Debug\FileUtility.Form2.resources

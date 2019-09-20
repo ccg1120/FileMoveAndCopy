@@ -1,4 +1,6 @@
-﻿namespace FileUtility
+﻿using System;
+
+namespace FileUtility
 {
     partial class Form1
     {
@@ -37,6 +39,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.SourcePathLabel = new System.Windows.Forms.Label();
             this.SourceTextBox = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_FileMove
@@ -108,6 +114,32 @@
             this.SourceTextBox.Size = new System.Drawing.Size(313, 21);
             this.SourceTextBox.TabIndex = 7;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(448, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 설정ToolStripMenuItem
+            // 
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileToolStripMenuItem1});
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.FileToolStripMenuItem.Text = " 파일";
+            this.FileToolStripMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
+            // 
+            // 설정ToolStripMenuItem1
+            // 
+            this.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1";
+            this.FileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.FileToolStripMenuItem1.Text = "설정";
+            this.FileToolStripMenuItem1.Click += new System.EventHandler(this.FileToolStripMenuItem_Click_Setting);
+
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -121,9 +153,13 @@
             this.Controls.Add(this.FolderNameLabel);
             this.Controls.Add(this.FolderTextBox);
             this.Controls.Add(this.Button_FileMove);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "FileUtility";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +177,9 @@
 
         private System.Windows.Forms.Label SourcePathLabel;
         private System.Windows.Forms.TextBox SourceTextBox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem1;
     }
 }
 

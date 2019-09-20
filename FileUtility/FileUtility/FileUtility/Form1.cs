@@ -61,6 +61,19 @@ namespace FileUtility
                 Debug.WriteLine("DialogResult. OFF");
             }
         }
-        
+
+        private void FileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FileToolStripMenuItem_Click_Setting(object sender, EventArgs e)
+        {
+            if (!Form2.isLoad)
+            {
+                Form2 show2 = new Form2();
+                show2.Visible = true;
+            }
+        }
     }
 }
