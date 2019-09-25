@@ -14,9 +14,13 @@ namespace FileUtility
         [STAThread]
         static void Main()
         {
+            StartSettingManager.StartSettingInit();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+
         }
     }
 }

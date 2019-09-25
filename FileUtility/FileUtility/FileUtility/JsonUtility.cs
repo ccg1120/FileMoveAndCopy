@@ -2,26 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FileUtility
 {
-    [DataContract]
-    public class StartSetting
+    public class JsonUtility
     {
-        [DataMember]
-        public string Version;
-        [DataMember]
-        public bool IsLoadStartSetting;
-
-        public static string GetJsonString(StartSetting setting)
+        public static string GetJsonString<T>( T setting) 
         {
             MemoryStream str = new MemoryStream();
 
-            var ser = new DataContractJsonSerializer(typeof(StartSetting));
+            var ser = new DataContractJsonSerializer(typeof(T));
 
             ser.WriteObject(str, setting);
 
@@ -33,17 +26,20 @@ namespace FileUtility
             return result;
         }
 
-        public static StartSetting ReadToStartSetting(string json)
+        public static T ReadToStartSetting<T>(string json) where T : new()
         {
-            var deserializedUser = new StartSetting();
+            T deserializedUser = new T();
+
+            Type type = deserializedUser.GetType();
+
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
-            var ser = new DataContractJsonSerializer(deserializedUser.GetType());
-            deserializedUser = ser.ReadObject(ms) as StartSetting;
+
+            var ser = new DataContractJsonSerializer(type);
+            
+            deserializedUser = (T)ser.ReadObject(ms);
             ms.Close();
             return deserializedUser;
         }
+
     }
-
-
-    
 }

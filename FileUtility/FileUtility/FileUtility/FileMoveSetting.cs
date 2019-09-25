@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.Runtime.Serialization;
+
 
 namespace FileUtility
 {
-    class FileMoveSetting
+    [DataContract]
+    public class FileMoveSetting
     {
+        [DataMember]
         public string Extention;
+        [DataMember]
         public string DestinationFolderName;
+        [DataMember]
         public string SourceFolderPath;
     }
 }
