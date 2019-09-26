@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileMoveSettingManager.cs" />
     <Compile Include="FileUtility.cs" />
     <Compile Include="FolderUtility.cs" />
     <Compile Include="Form1.cs">

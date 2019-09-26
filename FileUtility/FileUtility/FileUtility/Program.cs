@@ -11,6 +11,9 @@ namespace FileUtility
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>
+
+        public static Form1 startform;
+
         [STAThread]
         static void Main()
         {
@@ -18,8 +21,12 @@ namespace FileUtility
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            startform = new Form1();
+            //startform.LoadExtentionSetting(StartSettingManager.GetFileMoveSetting());
+            StartSettingManager.SetStartOption();
+            Application.Run(startform);
 
+            
 
         }
     }

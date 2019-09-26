@@ -6,8 +6,6 @@ namespace FileUtility
     public class StartSettingManager
     {
         private static StartSetting m_Setting;
-        private static string m_Version = "1.0.0";
-
 
         private static string m_SettingFolderName = "Setting";
         private static string m_SaveFileExtention = ".json";
@@ -15,6 +13,10 @@ namespace FileUtility
         private static string m_SettingPath = string.Empty;
         private static string m_SettingFileFullPath = string.Empty;
 
+        public static FileMoveSetting GetFileMoveSetting()
+        {
+            return m_Setting.FileSetting;
+        }
 
         public static void StartSettingInit()
         {
@@ -28,6 +30,15 @@ namespace FileUtility
             {
                 m_Setting = CreateDefalt();
                 SaveSettingFile();
+            }
+
+        }
+
+        public static void SetStartOption()
+        {
+            if(m_Setting.IsLoadStartSetting)
+            {
+                Program.startform.LoadExtentionSetting(m_Setting.FileSetting);
             }
         }
 
@@ -68,16 +79,22 @@ namespace FileUtility
             string json = JsonUtility.GetJsonString<StartSetting>(m_Setting);
 
             File.WriteAllText(m_SettingFileFullPath, json);
-            
         }
 
         private static StartSetting CreateDefalt()
         {
             StartSetting result = new StartSetting();
-            result.Version = m_Version;
+            //result.Version = m_Version;
             result.IsLoadStartSetting = false;
             return result;
         }
+
+        private static T CreateDefalt<T>() where T : new()
+        {
+            T result = new T();
+            return result;
+        }
+
         private static bool CheckSettingFileAndCreateEmptyFile()
         {
             string filename = m_SaveFileName + m_SaveFileExtention;

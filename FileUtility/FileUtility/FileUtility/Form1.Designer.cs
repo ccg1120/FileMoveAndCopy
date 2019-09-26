@@ -165,6 +165,12 @@ namespace FileUtility
 
         }
 
+        public void LoadExtentionSetting(FileMoveSetting setting)
+        {
+            ExtensionTextBox.Text = setting.Extention;
+            FolderTextBox.Text = setting.DestinationFolderName;
+        }
+
 
 
         #endregion

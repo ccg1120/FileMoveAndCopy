@@ -1,5 +1,4 @@
-﻿
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 
 namespace FileUtility
@@ -8,10 +7,12 @@ namespace FileUtility
     public class FileMoveSetting
     {
         [DataMember]
-        public string Extention;
+        public bool IsChange = false;
         [DataMember]
-        public string DestinationFolderName;
+        public string Extention = string.Empty;
         [DataMember]
-        public string SourceFolderPath;
+        public string DestinationFolderName = string.Empty;
+        [DataMember]
+        public string SourceFolderPath = string.Empty;
     }
 }

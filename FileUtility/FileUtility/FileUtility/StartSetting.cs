@@ -13,11 +13,11 @@ namespace FileUtility
     public class StartSetting
     {
         [DataMember]
-        public string Version;
+        public string Version = "1.0.0";
         [DataMember]
-        public bool IsLoadStartSetting;
+        public bool IsLoadStartSetting = false;
+
+        [DataMember]
+        public FileMoveSetting FileSetting = new FileMoveSetting();
     }
-
-
-    
 }
