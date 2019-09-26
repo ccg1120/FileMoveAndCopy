@@ -36,6 +36,8 @@ namespace FileUtility
             manager.CreateAction(()=>ShowFinishMessage());
         }
 
+
+
         private void ShowFinishMessage()
         {
             MessageBox.Show("Finish!");
@@ -61,6 +63,21 @@ namespace FileUtility
                 Debug.WriteLine("DialogResult. OFF");
             }
         }
-        
+
+        private void FileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FileToolStripMenuItem_Click_Setting(object sender, EventArgs e)
+        {
+            if (!Form2.isWindowLoad)
+            {
+                Form2 show2 = new Form2(StartSettingManager.IsStartLoad());
+                show2.Visible = true;
+            }
+        }
+
+      
     }
 }
