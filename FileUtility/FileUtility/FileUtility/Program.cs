@@ -23,11 +23,19 @@ namespace FileUtility
             Application.SetCompatibleTextRenderingDefault(false);
             startform = new Form1();
             //startform.LoadExtentionSetting(StartSettingManager.GetFileMoveSetting());
-            StartSettingManager.SetStartOption();
+
+            StartSettingManager.GetLoadSetting(LoadSettingValue);
+
             Application.Run(startform);
-
-            
-
         }
+
+        private static void LoadSettingValue(FileMoveSetting filesetting)
+        {
+            if(filesetting != null)
+            {
+                startform.LoadExtentionSetting(filesetting);
+            }
+        }
+
     }
 }

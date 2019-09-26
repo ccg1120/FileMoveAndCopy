@@ -13,10 +13,7 @@ namespace FileUtility
         private static string m_SettingPath = string.Empty;
         private static string m_SettingFileFullPath = string.Empty;
 
-        public static FileMoveSetting GetFileMoveSetting()
-        {
-            return m_Setting.FileSetting;
-        }
+
 
         public static void StartSettingInit()
         {
@@ -31,14 +28,26 @@ namespace FileUtility
                 m_Setting = CreateDefalt();
                 SaveSettingFile();
             }
-
         }
 
-        public static void SetStartOption()
+        public static bool IsStartLoad()
+        {
+            return m_Setting.IsLoadStartSetting;
+        }
+        public static void ChangeStartLoadState(bool ison)
+        {
+            m_Setting.IsLoadStartSetting = ison;
+            SaveSettingFile();
+        }
+        public static void GetLoadSetting(Action<FileMoveSetting> act)
         {
             if(m_Setting.IsLoadStartSetting)
             {
-                Program.startform.LoadExtentionSetting(m_Setting.FileSetting);
+                act.Invoke(m_Setting.FileSetting);
+            }
+            else
+            {
+                act.Invoke(null);
             }
         }
 

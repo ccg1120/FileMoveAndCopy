@@ -12,20 +12,20 @@ namespace FileUtility
 {
     public partial class Form2 : Form
     {
-        public static bool isLoad = false;
+        public static bool isWindowLoad = false;
 
         private bool isStartLoad = false;
-        public Form2()
+        public Form2(bool ison)
         {
             InitializeComponent();
-            isLoad = true;
+            isWindowLoad = true;
             Closed += Form2_Closed;
-
+            m_StartSettingLoadCheck.Checked = ison;
         }
 
         private void Form2_Closed(object sender, System.EventArgs e)
         {
-            isLoad = false;
+            isWindowLoad = false;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -36,6 +36,7 @@ namespace FileUtility
         private void StartLoadState_CheckedChanged(object sender, EventArgs e)
         {
             isStartLoad = !isStartLoad;
+            StartSettingManager.ChangeStartLoadState(isStartLoad);
         }
     }
 }

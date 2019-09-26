@@ -69,9 +69,9 @@ namespace FileUtility
 
         private void FileToolStripMenuItem_Click_Setting(object sender, EventArgs e)
         {
-            if (!Form2.isLoad)
+            if (!Form2.isWindowLoad)
             {
-                Form2 show2 = new Form2();
+                Form2 show2 = new Form2(StartSettingManager.IsStartLoad());
                 show2.Visible = true;
             }
         }
