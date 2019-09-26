@@ -35,6 +35,10 @@ namespace FileUtility
         {
             get { return m_FileType; }
             set { m_FileType = value;
+                if(!m_FileType.StartsWith("."))
+                {
+                    m_FileType = "." + m_FileType;
+                }
                 m_FileType.ToLower();
             }
         }
