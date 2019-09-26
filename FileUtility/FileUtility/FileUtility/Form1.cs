@@ -36,6 +36,8 @@ namespace FileUtility
             manager.CreateAction(()=>ShowFinishMessage());
         }
 
+
+
         private void ShowFinishMessage()
         {
             MessageBox.Show("Finish!");
@@ -75,5 +77,7 @@ namespace FileUtility
                 show2.Visible = true;
             }
         }
+
+      
     }
 }

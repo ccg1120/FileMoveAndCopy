@@ -42,12 +42,26 @@ namespace FileUtility
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.m_FileMoveTab = new System.Windows.Forms.TabPage();
+            this.m_FileCopyTab = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.m_FileMoveTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_FileMove
             // 
-            this.Button_FileMove.Location = new System.Drawing.Point(361, 197);
+            this.Button_FileMove.Location = new System.Drawing.Point(357, 154);
             this.Button_FileMove.Name = "Button_FileMove";
             this.Button_FileMove.Size = new System.Drawing.Size(75, 23);
             this.Button_FileMove.TabIndex = 0;
@@ -57,7 +71,7 @@ namespace FileUtility
             // 
             // FolderTextBox
             // 
-            this.FolderTextBox.Location = new System.Drawing.Point(123, 49);
+            this.FolderTextBox.Location = new System.Drawing.Point(119, 6);
             this.FolderTextBox.Name = "FolderTextBox";
             this.FolderTextBox.Size = new System.Drawing.Size(120, 21);
             this.FolderTextBox.TabIndex = 1;
@@ -65,7 +79,7 @@ namespace FileUtility
             // FolderNameLabel
             // 
             this.FolderNameLabel.AutoSize = true;
-            this.FolderNameLabel.Location = new System.Drawing.Point(12, 52);
+            this.FolderNameLabel.Location = new System.Drawing.Point(8, 9);
             this.FolderNameLabel.Name = "FolderNameLabel";
             this.FolderNameLabel.Size = new System.Drawing.Size(78, 12);
             this.FolderNameLabel.TabIndex = 2;
@@ -74,7 +88,7 @@ namespace FileUtility
             // FileExtensionLabel
             // 
             this.FileExtensionLabel.AutoSize = true;
-            this.FileExtensionLabel.Location = new System.Drawing.Point(12, 79);
+            this.FileExtensionLabel.Location = new System.Drawing.Point(8, 36);
             this.FileExtensionLabel.Name = "FileExtensionLabel";
             this.FileExtensionLabel.Size = new System.Drawing.Size(85, 12);
             this.FileExtensionLabel.TabIndex = 4;
@@ -82,14 +96,14 @@ namespace FileUtility
             // 
             // ExtensionTextBox
             // 
-            this.ExtensionTextBox.Location = new System.Drawing.Point(123, 76);
+            this.ExtensionTextBox.Location = new System.Drawing.Point(119, 33);
             this.ExtensionTextBox.Name = "ExtensionTextBox";
             this.ExtensionTextBox.Size = new System.Drawing.Size(120, 21);
             this.ExtensionTextBox.TabIndex = 3;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(361, 154);
+            this.button2.Location = new System.Drawing.Point(357, 111);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -100,7 +114,7 @@ namespace FileUtility
             // SourcePathLabel
             // 
             this.SourcePathLabel.AutoSize = true;
-            this.SourcePathLabel.Location = new System.Drawing.Point(12, 130);
+            this.SourcePathLabel.Location = new System.Drawing.Point(8, 87);
             this.SourcePathLabel.Name = "SourcePathLabel";
             this.SourcePathLabel.Size = new System.Drawing.Size(101, 12);
             this.SourcePathLabel.TabIndex = 8;
@@ -108,7 +122,7 @@ namespace FileUtility
             // 
             // SourceTextBox
             // 
-            this.SourceTextBox.Location = new System.Drawing.Point(123, 127);
+            this.SourceTextBox.Location = new System.Drawing.Point(119, 84);
             this.SourceTextBox.Name = "SourceTextBox";
             this.SourceTextBox.ReadOnly = true;
             this.SourceTextBox.Size = new System.Drawing.Size(313, 21);
@@ -120,39 +134,156 @@ namespace FileUtility
             this.FileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(448, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(496, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // 설정ToolStripMenuItem
+            // FileToolStripMenuItem
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem1});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
-            this.FileToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.FileToolStripMenuItem.Text = " 파일";
             this.FileToolStripMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
             // 
-            // 설정ToolStripMenuItem1
+            // FileToolStripMenuItem1
             // 
             this.FileToolStripMenuItem1.Name = "FileToolStripMenuItem1";
-            this.FileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.FileToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
             this.FileToolStripMenuItem1.Text = "설정";
             this.FileToolStripMenuItem1.Click += new System.EventHandler(this.FileToolStripMenuItem_Click_Setting);
-
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Location = new System.Drawing.Point(12, 27);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(436, 224);
+            this.tabControl1.TabIndex = 10;
+            //// 
+            //// button1
+            //// 
+            //this.button1.Location = new System.Drawing.Point(357, 154);
+            //this.button1.Name = "button1";
+            //this.button1.Size = new System.Drawing.Size(75, 23);
+            //this.button1.TabIndex = 0;
+            //this.button1.Text = "Move";
+            //this.button1.UseVisualStyleBackColor = true;
+            //this.button1.Click += new System.EventHandler(this.Button_MoveFiles);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(119, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(120, 21);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Folder Name";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(119, 33);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(120, 21);
+            this.textBox2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 12);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "File Extension";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(357, 111);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Open";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button_SelectSourcePath);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(119, 84);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(313, 21);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "SourcePathLabel";
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.m_FileMoveTab);
+            this.tabControl2.Controls.Add(this.m_FileCopyTab);
+            this.tabControl2.Location = new System.Drawing.Point(12, 27);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(471, 224);
+            this.tabControl2.TabIndex = 10;
+            // 
+            // tabPage3
+            // 
+            this.m_FileMoveTab.Controls.Add(this.label1);
+            this.m_FileMoveTab.Controls.Add(this.label3);
+            this.m_FileMoveTab.Controls.Add(this.Button_FileMove);
+            this.m_FileMoveTab.Controls.Add(this.FolderTextBox);
+            this.m_FileMoveTab.Controls.Add(this.textBox3);
+            
+            this.m_FileMoveTab.Controls.Add(this.SourcePathLabel);
+            this.m_FileMoveTab.Controls.Add(this.FolderNameLabel);
+            this.m_FileMoveTab.Controls.Add(this.button3);
+            this.m_FileMoveTab.Controls.Add(this.textBox1);
+            this.m_FileMoveTab.Controls.Add(this.SourceTextBox);
+            this.m_FileMoveTab.Controls.Add(this.ExtensionTextBox);
+            this.m_FileMoveTab.Controls.Add(this.label2);
+            this.m_FileMoveTab.Controls.Add(this.FileExtensionLabel);
+            this.m_FileMoveTab.Controls.Add(this.button2);
+            this.m_FileMoveTab.Controls.Add(this.textBox2);
+            this.m_FileMoveTab.Location = new System.Drawing.Point(4, 22);
+            this.m_FileMoveTab.Name = "tabPage3";
+            this.m_FileMoveTab.Padding = new System.Windows.Forms.Padding(3);
+            this.m_FileMoveTab.Size = new System.Drawing.Size(463, 198);
+            this.m_FileMoveTab.TabIndex = 0;
+            this.m_FileMoveTab.Text = "FileMove";
+            this.m_FileMoveTab.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.m_FileCopyTab.Location = new System.Drawing.Point(4, 22);
+            this.m_FileCopyTab.Name = "tabPage4";
+            this.m_FileCopyTab.Padding = new System.Windows.Forms.Padding(3);
+            this.m_FileCopyTab.Size = new System.Drawing.Size(463, 225);
+            this.m_FileCopyTab.TabIndex = 1;
+            this.m_FileCopyTab.Text = "FileCopy";
+            this.m_FileCopyTab.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 236);
-            this.Controls.Add(this.SourcePathLabel);
-            this.Controls.Add(this.SourceTextBox);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.FileExtensionLabel);
-            this.Controls.Add(this.ExtensionTextBox);
-            this.Controls.Add(this.FolderNameLabel);
-            this.Controls.Add(this.FolderTextBox);
-            this.Controls.Add(this.Button_FileMove);
+            this.ClientSize = new System.Drawing.Size(496, 269);
+            this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -160,6 +291,9 @@ namespace FileUtility
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.m_FileMoveTab.ResumeLayout(false);
+            this.m_FileMoveTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,6 +320,19 @@ namespace FileUtility
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem1;
+        private System.Windows.Forms.TabControl tabControl1;
+        
+        
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage m_FileMoveTab;
+        private System.Windows.Forms.TabPage m_FileCopyTab;
     }
 }
 

@@ -30,7 +30,7 @@ namespace FileUtility
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
+            StartSettingManager.SaveSettingFile();
         }
 
         private void StartLoadState_CheckedChanged(object sender, EventArgs e)
@@ -38,5 +38,7 @@ namespace FileUtility
             isStartLoad = !isStartLoad;
             StartSettingManager.ChangeStartLoadState(isStartLoad);
         }
+
+       
     }
 }

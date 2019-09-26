@@ -37,7 +37,7 @@ namespace FileUtility
         public static void ChangeStartLoadState(bool ison)
         {
             m_Setting.IsLoadStartSetting = ison;
-            SaveSettingFile();
+            //SaveSettingFile();
         }
         public static void GetLoadSetting(Action<FileMoveSetting> act)
         {
@@ -73,7 +73,7 @@ namespace FileUtility
             return temp;
         }
 
-        private static void SaveSettingFile()
+        public static void SaveSettingFile()
         {
             if(m_Setting == null)
             {
