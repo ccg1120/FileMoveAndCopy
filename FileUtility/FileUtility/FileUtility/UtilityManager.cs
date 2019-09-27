@@ -6,7 +6,10 @@ namespace FileUtility
 {
     public class UtilityManager
     {
-        
+        private FileMovePath m_MovePath = new FileMovePath();
+        private FileCopyPath m_CopyPath = new FileCopyPath();
+
+
         private string m_DestFolderName = string.Empty;
         private string m_SourceFolderPath = string.Empty;
         private string m_DestFolderPath = string.Empty;
@@ -48,7 +51,19 @@ namespace FileUtility
         {
             m_DestFolderPath = Path.Combine(m_SourceFolderPath, m_DestFolderName);
             FolderUtility.FolderUtilityInit(m_DestFolderPath);
+
+            m_MovePath.m_SourceFolderpath = m_SourceFolderPath;
+            m_MovePath.m_DestFolderpath = m_DestFolderPath;
+            m_MovePath.m_FileType = m_FileType;
+
+
             FileUtility.FileUtilityInit(m_SourceFolderPath, m_DestFolderPath, m_FileType);
+        }
+
+        public void CopyPathSetting()
+        {
+            //TODO : 파일복사 경로 입력 UI구성 후 진행
+
         }
 
         private bool CheckState_FileMove()
@@ -84,11 +99,11 @@ namespace FileUtility
             }
             if (FolderUtility.CreateFolder())
             {
-                FileUtility.FileMovesAlltoFolder();
+                FileUtility.FileMovesAlltoFolder(m_MovePath);
             }
             else
             {
-                FileUtility.FileMovePart2Folder();
+                FileUtility.FileMovePart2Folder(m_MovePath);
             }
             finishact.Invoke();
         }
