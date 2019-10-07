@@ -19,31 +19,25 @@ namespace FileUtility
 
         
 
-        public string DestFolderName
+        public string MovePath_DestFolderName
         {
-            get { return m_DestFolderName; }
-            set { m_DestFolderName = value; }
+            get { return m_MovePath.m_DestFolderName; }
+            set { m_MovePath.m_DestFolderName = value; }
         }
-        public string DestFolderpath
+        public string MovePath_DestFolderpath
         {
-            get { return m_DestFolderPath; }
+            get { return m_MovePath.m_DestFolderpath; }
             //set { m_DestFolderPath = value; }
         }
-        public string SourceFolderpath
+        public string MovePath_SourceFolderpath
         {
-            get { return m_SourceFolderPath; }
-            set { m_SourceFolderPath = value; }
+            get { return m_MovePath.m_SourceFolderpath; }
+            set { m_MovePath.m_SourceFolderpath = value; }
         }
-        public string FileType
+        public string MovePath_FileType
         {
-            get { return m_FileType; }
-            set { m_FileType = value;
-                if(!m_FileType.StartsWith("."))
-                {
-                    m_FileType = "." + m_FileType;
-                }
-                m_FileType.ToLower();
-            }
+            get { return m_MovePath.m_FileType; }
+            set { m_MovePath.FileType = value; }
         }
    
 
@@ -55,7 +49,6 @@ namespace FileUtility
             m_MovePath.m_SourceFolderpath = m_SourceFolderPath;
             m_MovePath.m_DestFolderpath = m_DestFolderPath;
             m_MovePath.m_FileType = m_FileType;
-
 
             FileUtility.FileUtilityInit(m_SourceFolderPath, m_DestFolderPath, m_FileType);
         }

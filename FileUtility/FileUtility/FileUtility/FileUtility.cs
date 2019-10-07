@@ -132,9 +132,24 @@ namespace FileUtility
 
     public class FileMovePath
     {
+        public string m_DestFolderName; //옮겨질 폴더 이름
         public string m_DestFolderpath; //최종 옮겨질 위치 
         public string m_SourceFolderpath;   // 옮길 파일 위치
         public string m_FileType;   //파일 종류
+
+        public string FileType
+        {
+            get { return m_FileType; }
+            set
+            {
+                m_FileType = value;
+                if (!m_FileType.StartsWith("."))
+                {
+                    m_FileType = "." + m_FileType;
+                }
+                m_FileType.ToLower();
+            }
+        }
     }
 
     public class FileCopyPath : FileMovePath

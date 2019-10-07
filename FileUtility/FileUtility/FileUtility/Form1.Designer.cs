@@ -53,6 +53,8 @@ namespace FileUtility
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.m_FileMoveTab = new System.Windows.Forms.TabPage();
             this.m_FileCopyTab = new System.Windows.Forms.TabPage();
+            this.m_SourceExtentionTextBox = new System.Windows.Forms.TextBox();
+            this.m_SourceExtentionLabel = new System.Windows.Forms.Label();
             this.m_FileCopyButton = new System.Windows.Forms.Button();
             this.m_SourcePathTextBox = new System.Windows.Forms.TextBox();
             this.m_SourcePathLabel = new System.Windows.Forms.Label();
@@ -265,6 +267,8 @@ namespace FileUtility
             // 
             // m_FileCopyTab
             // 
+            this.m_FileCopyTab.Controls.Add(this.m_SourceExtentionTextBox);
+            this.m_FileCopyTab.Controls.Add(this.m_SourceExtentionLabel);
             this.m_FileCopyTab.Controls.Add(this.m_FileCopyButton);
             this.m_FileCopyTab.Controls.Add(this.m_SourcePathTextBox);
             this.m_FileCopyTab.Controls.Add(this.m_SourcePathLabel);
@@ -280,6 +284,22 @@ namespace FileUtility
             this.m_FileCopyTab.Text = "FileCopy";
             this.m_FileCopyTab.UseVisualStyleBackColor = true;
             // 
+            // m_SourceExtentionTextBox
+            // 
+            this.m_SourceExtentionTextBox.Location = new System.Drawing.Point(109, 36);
+            this.m_SourceExtentionTextBox.Name = "m_SourceExtentionTextBox";
+            this.m_SourceExtentionTextBox.Size = new System.Drawing.Size(100, 21);
+            this.m_SourceExtentionTextBox.TabIndex = 8;
+            // 
+            // m_SourceExtentionLabel
+            // 
+            this.m_SourceExtentionLabel.AutoSize = true;
+            this.m_SourceExtentionLabel.Location = new System.Drawing.Point(6, 39);
+            this.m_SourceExtentionLabel.Name = "m_SourceExtentionLabel";
+            this.m_SourceExtentionLabel.Size = new System.Drawing.Size(101, 12);
+            this.m_SourceExtentionLabel.TabIndex = 7;
+            this.m_SourceExtentionLabel.Text = "Source Extention";
+            // 
             // m_FileCopyButton
             // 
             this.m_FileCopyButton.Location = new System.Drawing.Point(366, 169);
@@ -291,7 +311,7 @@ namespace FileUtility
             // 
             // m_SourcePathTextBox
             // 
-            this.m_SourcePathTextBox.Location = new System.Drawing.Point(109, 93);
+            this.m_SourcePathTextBox.Location = new System.Drawing.Point(109, 126);
             this.m_SourcePathTextBox.Name = "m_SourcePathTextBox";
             this.m_SourcePathTextBox.Size = new System.Drawing.Size(332, 21);
             this.m_SourcePathTextBox.TabIndex = 5;
@@ -299,7 +319,7 @@ namespace FileUtility
             // m_SourcePathLabel
             // 
             this.m_SourcePathLabel.AutoSize = true;
-            this.m_SourcePathLabel.Location = new System.Drawing.Point(6, 102);
+            this.m_SourcePathLabel.Location = new System.Drawing.Point(6, 135);
             this.m_SourcePathLabel.Name = "m_SourcePathLabel";
             this.m_SourcePathLabel.Size = new System.Drawing.Size(74, 12);
             this.m_SourcePathLabel.TabIndex = 4;
@@ -307,7 +327,7 @@ namespace FileUtility
             // 
             // m_DestinationPathTextBox
             // 
-            this.m_DestinationPathTextBox.Location = new System.Drawing.Point(109, 36);
+            this.m_DestinationPathTextBox.Location = new System.Drawing.Point(109, 69);
             this.m_DestinationPathTextBox.Name = "m_DestinationPathTextBox";
             this.m_DestinationPathTextBox.Size = new System.Drawing.Size(332, 21);
             this.m_DestinationPathTextBox.TabIndex = 3;
@@ -315,7 +335,7 @@ namespace FileUtility
             // m_CopyDestinationLabel
             // 
             this.m_CopyDestinationLabel.AutoSize = true;
-            this.m_CopyDestinationLabel.Location = new System.Drawing.Point(6, 39);
+            this.m_CopyDestinationLabel.Location = new System.Drawing.Point(6, 72);
             this.m_CopyDestinationLabel.Name = "m_CopyDestinationLabel";
             this.m_CopyDestinationLabel.Size = new System.Drawing.Size(96, 12);
             this.m_CopyDestinationLabel.TabIndex = 2;
@@ -406,6 +426,9 @@ namespace FileUtility
         private System.Windows.Forms.Label m_SourcePathLabel;
         private System.Windows.Forms.TextBox m_SourcePathTextBox;
         private System.Windows.Forms.Button m_FileCopyButton;
+
+        private System.Windows.Forms.TextBox m_SourceExtentionTextBox;
+        private System.Windows.Forms.Label m_SourceExtentionLabel;
     }
 }
 

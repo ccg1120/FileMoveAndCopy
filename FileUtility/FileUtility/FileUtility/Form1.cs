@@ -29,7 +29,7 @@ namespace FileUtility
         {
             // TODO : 파일 이동 명령
             Debug.WriteLine("Click button");
-            manager.DestFolderName = this.FolderTextBox.Text;
+            manager.MovePath_DestFolderName = this.FolderTextBox.Text;
             manager.FileType = this.ExtensionTextBox.Text;
 
             manager.FolderPathSetting();
@@ -49,18 +49,28 @@ namespace FileUtility
 
         private void Button_SelectSourcePath(object sneder, EventArgs e)
         {
+            SourceTextBox.Text = manager.MovePath_SourceFolderpath = FolderDialog("Source path");
+            
+            
+        }
+
+        private void Button_SelectSourcePathbyCopy(object sneder, EventArgs e)
+        {
+            //m_SourcePathTextBox.Text = manager.CopyPathSetting
+        }
+        private string FolderDialog(string des)
+        {
             FolderBrowserDialog dia = new FolderBrowserDialog();
 
-            dia.Description = "Source path";
+            dia.Description = des;
 
-            if(dia.ShowDialog() == DialogResult.OK)
+            if (dia.ShowDialog() == DialogResult.OK)
             {
-                manager.SourceFolderpath = dia.SelectedPath;
-                SourceTextBox.Text = manager.SourceFolderpath;
+                return dia.SelectedPath;
             }
             else
             {
-                Debug.WriteLine("DialogResult. OFF");
+                return string.Empty;
             }
         }
 
