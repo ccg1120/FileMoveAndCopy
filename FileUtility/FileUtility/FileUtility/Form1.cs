@@ -30,7 +30,7 @@ namespace FileUtility
             // TODO : 파일 이동 명령
             Debug.WriteLine("Click button");
             manager.MovePath_DestFolderName = this.FolderTextBox.Text;
-            manager.FileType = this.ExtensionTextBox.Text;
+            manager.MovePath_FileType = this.ExtensionTextBox.Text;
 
             manager.FolderPathSetting();
             manager.CreateAction(()=>ShowFinishMessage());
